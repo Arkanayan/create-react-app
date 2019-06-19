@@ -217,7 +217,11 @@ module.exports = function(webpackEnv) {
               // https://github.com/terser-js/terser/issues/120
               inline: 2,
             },
+            // To fix breaking code in production build of flowmagic
             mangle: {
+              toplevel: true,
+              keep_classnames: true,
+              keep_fnames: true,
               safari10: true,
             },
             output: {
